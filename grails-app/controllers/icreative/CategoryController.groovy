@@ -103,16 +103,6 @@ class CategoryController {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         params.put("sort","orderLevel");
         params.put("order","desc");
-//
-//        print("----------------------start params-----------------------------"+Product.findAllByCategory(categoryInstance,params).size())
-//        for(Product pro : Product.findAllByCategory(categoryInstance,params)){
-//              print(pro.getOrderLevel())
-//        }
-//        print("----------------------start all-----------------------------"+Product.findAllByCategory(categoryInstance).size())
-//        for(Product pro : Product.findAllByCategory(categoryInstance)){
-//            print(pro.getOrderLevel())
-//        }
-
         [productInstanceList: Product.findAllByCategory(categoryInstance,params), productInstanceTotal: categoryInstance.getProducts().size(), categoryInstance: categoryInstance]
     }
 
