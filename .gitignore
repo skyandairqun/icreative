@@ -5,12 +5,14 @@
 *.pydevproject
 .project
 .metadata
+.idea/
 bin/
 tmp/
 out/
 target/
 images/
 uploads/
+workspace.xml
 *.tmp
 *.bak
 *.swp
