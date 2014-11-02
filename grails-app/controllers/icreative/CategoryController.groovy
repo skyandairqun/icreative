@@ -102,7 +102,7 @@ class CategoryController {
         }
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         params.put("sort","orderLevel");
-        params.put("order","desc");
+        params.put("order","asc");
         [productInstanceList: Product.findAllByCategory(categoryInstance,params), productInstanceTotal: categoryInstance.getProducts().size(), categoryInstance: categoryInstance]
     }
 
