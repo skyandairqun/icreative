@@ -102,6 +102,7 @@ class CategoryController {
         }
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         params.put("sort","orderLevel");
+        //为了实现统一则使用升序的方式
         params.put("order","asc");
         [productInstanceList: Product.findAllByCategory(categoryInstance,params), productInstanceTotal: categoryInstance.getProducts().size(), categoryInstance: categoryInstance]
     }
