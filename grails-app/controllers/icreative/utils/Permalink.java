@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
  */
 public class Permalink {
     public static String generatePerlink(String controllerName, String actionName, String value) {
+        value= value.replaceAll("\"","");
         String regEx = "[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
         Pattern p = Pattern.compile(regEx);
         Matcher m = p.matcher(value);
@@ -28,7 +29,7 @@ public class Permalink {
     }
 
     public static void main(String args[]) {
-        System.out.println(Permalink.generatePerlink("product", "detail", "product A  B + #$%#^()"));
+        System.out.println(Permalink.generatePerlink("product", "detail", "\"product A  B + #$%#^()"));
         System.out.println(Permalink.convertToPerlink("product    A B + #$%#^()"));
 
     }
