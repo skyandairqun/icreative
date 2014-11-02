@@ -21,6 +21,7 @@ public class Permalink {
     }
 
     public static String generatePerlink( String value) {
+        value= value.replaceAll("\"","");
         String regEx = "[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
         Pattern p = Pattern.compile(regEx);
         Matcher m = p.matcher(value);
@@ -35,6 +36,7 @@ public class Permalink {
     }
 
     public static String convertToPerlink(String value) {
+        value= value.replaceAll("\"","");
         String regEx = "[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
         Pattern p = Pattern.compile(regEx);
         Matcher m = p.matcher(value);
